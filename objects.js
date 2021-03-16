@@ -1,3 +1,6 @@
+// can't wait for the roast in this section '^ '
+
+
 class Hamster {
   constructor (name){
     this.name = name;
@@ -18,6 +21,7 @@ getPrice(){
 }
 
 }
+/// class Hamster done
 
 class Person {
   constructor(name){
@@ -70,3 +74,23 @@ class Person {
   }
 
 }
+
+//class Person done
+
+const timmy = new Person (Timmy);
+timmy.Age(5);
+timmy.eat(1)*5;
+timmy.exercise(1)*5//isnt he five, why is he so worried?
+timmy.setAge(9);
+
+const hamster2 = new Hamster ("Gus");
+hamster2.owner("Timmy");
+
+timmy.buyHamster(hamster2);
+timmy.age(15);
+timmy.exercise(1)*2;
+timmy.eat(1)*2;
+
+
+
+

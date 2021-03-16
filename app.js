@@ -2,9 +2,9 @@ let money = 0;
 let scissorsCost = 5;
 let old_timey_lawnmowerCost = 25;
 const tools = {
-    teeth: 0.0416,
-    rustyScissors: 0.2083,
-    old_timey_lawnmower: 1.0416
+    teeth: 0.0416, // 1 a day
+    rustyScissors: 0.2083, // 5 a day
+    old_timey_lawnmower: 2.0833 // 50 a day
 }
 
 function buyS() {

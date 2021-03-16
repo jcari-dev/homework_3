@@ -2,10 +2,12 @@ let money = 0;
 let scissorsCost = 5;
 let old_timey_lawnmowerCost = 25;
 let fancy_BP_LawnmowerCost = 250;
+let jorge_and_friendsCost = 500;
 const tools = {
     teeth: 0.0416, // 1 a day
     rustyScissors: 0.2083, // 5 a day
-    old_timey_lawnmower: 2.0833 // 50 a day
+    old_timey_lawnmower: 2.0833, // 50 a day
+    fancy_BP_Lawnmower: 4.1666 // 100 a day
 }
 
 // functions to buy new items/way to cut more grass
@@ -48,11 +50,27 @@ function fancyBa() {
         money -= fancy_BP_LawnmowerCost;
         document.getElementById('profit').innerHTML = `Total Money: $${money}`;
         confirm(`You have ${money} left.`)
-        document.getElementById('sciBtn2').style.visibility = "hidden"; // I have 
+        document.getElementById('sciBtn3').style.visibility = "hidden"; // I have 
         //    tried so many things to try to properly disable that button, sadly this has been the best result
-        document.getElementById('workBtn2').style.visibility = "hidden";
+        document.getElementById('workBtn3').style.visibility = "hidden";
         document.getElementById('workBtn2').disabled = true;
-        document.getElementById('workBtn3').disabled = false;
+        document.getElementById('workBtn4').disabled = false;
+    } else {
+        confirm('Come back whenever!');
+    }
+}
+
+function hireJorgeNFriends() {
+    let buyJorge = confirm(`Are you sure you want to hire a Jorge and his friends for $500? You have $${money} left.`);
+    if (buyJorge == true) {
+        money -= jorge_and_friendsCost;
+        document.getElementById('profit').innerHTML = `Total Money: $${money}`;
+        confirm(`You have ${money} left.`)
+        document.getElementById('sciBtn4').style.visibility = "hidden"; // I have 
+        //    tried so many things to try to properly disable that button, sadly this has been the best result
+        document.getElementById('workBtn3').style.visibility = "hidden";
+        document.getElementById('workBtn2').disabled = true;
+        document.getElementById('workBtn4').disabled = false;
     } else {
         confirm('Come back whenever!');
     }
@@ -85,7 +103,17 @@ function disableBtn3() {
         document.getElementById('sciBtn3').disabled = true;
     }
 }
+
+function disableBtn4() {
+    if (money >= 500) {
+        document.getElementById('sciBtn4').disabled = false;
+    } else {
+        document.getElementById('sciBtn4').disabled = true;
+    }
+}
 // functions of each button to generate profit
+
+
 function work() {
     money += Math.round(tools.teeth * 24);
     console.log(money);
@@ -115,13 +143,10 @@ function work3() {
 
 }
 
+function work4() {
+    money += Math.round(tools.fancy_BP_Lawnmower * 24);
+    console.log(money);
+    document.getElementById('profit').innerHTML = `Total Money: $${money}`;
+    disableBtn4();
 
-
-
-
-// function work2(){
-//     money -5;
-//     money +=Math.round(tools.rustyScissors*24);
-//     console.log(money);
-//     document.getElementById('profit').innerHTML = `Total Money: $${money}`;
-// }
+}

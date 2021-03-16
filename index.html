@@ -8,13 +8,16 @@
     <script src="app.js"></script>
 </head>
 <body>
+    <div id= "fullBody">
     <div>
         <h1> Hi, I heard that you want to work. Press the button to work, I'll pay you depending on how much grass you can cut. <br><br> 
         To begin you only have your teeth, but you can buy more things the more you work. <br><br>
          <small><i> I'll pay you 1$ per day if you use your teeth.</i></small> </h1>
-        <input type="button" value="Work 24/hours" onclick="work()"><br><br>
+        <input type="button" id="workBtn1" value="Work 24/hours" onclick="work()">
+        <input type="button" id="workBtn2" value="Work 24/hours w/ Rusty Scissors" onclick="work2()" disabled><br><br>
         <div id="profit"> Total Money: 0 </div><br>
         <input type="button"  id= "sciBtn" value="Buy Rusty Scissors $5" onclick="buyS()" disabled><br>
 
     </div>
+</div>
 </html>

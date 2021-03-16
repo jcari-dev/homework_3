@@ -22,12 +22,7 @@ class Hero {
         console.log('i\'m ready to rumble');
     }
 }
-
-// const uwu = new Hero("uwume");
-
-// uwu.talkSass();
-
-// uwu.announceHealth();
+const dougie = new Hero ('Dougie');
 
 class Enemy{
     constructor(name){
@@ -56,6 +51,4 @@ class Enemy{
     }
 }
 
-// const uwux2 = new Enemy("uwuno");
-
-// uwux2.talkSmack();
+const pizza_rat = new Enemy ('Pizza_Rat');

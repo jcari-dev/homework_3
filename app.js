@@ -3,6 +3,20 @@ let scissorsCost = 5;
 let old_timey_lawnmowerCost = 25;
 let fancy_BP_LawnmowerCost = 250;
 let jorge_and_friendsCost = 500;
+
+// function intro (){
+// let name = prompt('Infinite Garden Owner: You\'re finally here. What is your name?', 'Name here');
+// // let next = prompt(`Okay ${name}, what tools, have you brought to cut all this grass?`, `If you have nothing just write "my teeth"`);
+//     // while(next !== "my teeth")                                     ((((tried to incorporate a while loop but it doesnt work )))
+//         // prompt('I cannot see how you\'re going to do this, what are you going to use?', 'what are you going to use, if nothing write "my teeth"');
+//         // confirm(`${name} have you lost your marbles?! Fine, but I will only pay $1 per day.`);
+    
+// }
+
+
+// intro(); ------- tried to add more input from the user, does clicking buttons counts as input from the user, right?
+
+
 const tools = {
     teeth: 0.0416, // 1 a day
     rustyScissors: 0.2083, // 5 a day
@@ -34,7 +48,7 @@ function buyOld() {
     if (buyOl == true) {
         money -= old_timey_lawnmowerCost;
         document.getElementById('profit').innerHTML = `Total Money: $${money}`;
-        confirm(`You have ${money} dollars left.`)
+        confirm(`Those were the easiest $25 of my life. You have ${money} dollars left.`)
         document.getElementById('sciBtn2').style.visibility = "hidden"; // I have 
         //    tried so many things to try to properly disable that button, sadly this has been the best result
         document.getElementById('workBtn2').style.visibility = "hidden";
@@ -77,6 +91,11 @@ function hireJorgeNFriends() {
     }
 }
 
+
+function win(){
+    if (money >= 1000)
+    alert(`Congratulations! You're on your way to become the next unicorn in Silicon Valley, You won! PS: Please feel Jorge.`)
+}
 
 // functions to disable buttons before purchase
 
@@ -157,5 +176,8 @@ function work5() {
     console.log(money);
     document.getElementById('profit').innerHTML = `Total Money: $${money}`;
     disableBtn4();
+    win();
+    
 
 }
+

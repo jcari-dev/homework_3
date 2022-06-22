@@ -1,96 +1,115 @@
-// can't wait for the roast in this section '^ '
-
-
-class Hamster {
-  constructor (name){
+//Constructor for hamster object
+function hamsters(owner, name){
+    this.owner =  owner;
     this.name = name;
-  }
-  owner = "";
-  price = 15;
-
-wheel(){
-    console.log('squeak squeak');
+    this.price = 15;
+    this.wheelrun = function(){
+        return 'squeak squeak';
+    };
+    this.eatfood = function(){
+        return 'nibble nibble';
+    };
+    this.getPrice = function(){
+        return this.price
+    }
 }
 
-eatFood(){
-    console.log('nibble nibble');
-}
-
-getPrice(){
-    return this.price; // vsc wont let me put just .price?
-}
-
-}
-/// class Hamster done
-
-class Person {
-  constructor(name){
+//Constructor for person object
+function person(name, age, height, weight, mood, bankAccount){
     this.name = name;
-  }
-  age = 0;
-  height = 0;
-  weight = 0;
-  mood = 0;
-  hamsters = [];
-  bankAccount = 0; //sad
+    this.age = age;
+    this.height = height;
+    this.weight = weight;
+    this.mood = mood;
+    this.hamsters = [];
+    this.bankAccount = bankAccount;
+    this.getName = function(){
+        return 'Name: ' + this.name;
+    };
+    this.getAge = function(){
+        return 'Age: ' + this.age;
+    };
+    this.getWeight = function(){
+        return 'Actual Weight: ' + this.weight + 'Kg';
+    };
+    this.greet = function(){
+        return 'Hello, my name is ' + this.name;
+    };
+    this.eat = function(){
+        this.weight += 5;
+        this.mood += 10;
 
-  getName(){
-    return this.name
-  }
+        return 'Nom nom \n' + 'Weight increased by 5Kg' + ' ' + 'Mood increased by 10 \n';
+    };
+    this.excercise = function(){
+        this.weight -= 3;
+        return 'Weight decreased by 3Kg! Good Job! \n'
+    };
+    this.ageUp = function(){
+        this.age += 1;
+        this.height += 10;
+        this.weight += 15;
+        this.mood -= 5;
+        this.bankAccount += 10
+        return 'Age increased by 1! \n' + 'Height increased by 10cm!\n' + 'Weight increased by 15Kg!\n' + 'Mood decreased by 5!\n' + 'Bank Account increased 10$!\n'
+    };
+    this.buyHamster = function(hamster){
+        if(this.bankAccount >= 15){
+                this.bankAccount -= hamsters.getPrice;
+                this.hamsters.push(hamster);
+                this.mood += 10;
+            }
+        else{
+                return 'Oh No! You can\'t buy this hamster! You need more money!'
+        }
 
-  getAge(){
-    return age
-  }
+    }
+}
+//1. Instantiate a new Person named Timmy
+const user1 = new person('Timmy', 0, 0, 0, 0, 0);
+console.log(user1.greet() + '\n');
 
-  getWeight(){
-    return weight
-  }
-
-  greet(){
-    console.log('hi ' + Person.name)
-  }
-
-  eat(){
-    weight + 1,
-    mood + 1
-  }
-
-  exercise(){
-    weight - 1
-  }
-
-  ageUp(){
-    age + 1,
-    height + 1,
-    weight + 1,
-    mood -1,
-    bankAccount + 10
-  }
-
-  buyHamster(hamster){
-    hamster.push(Person.hamster),
-    mood +10,
-    backAccount -getPrice(Hamster)
-  }
-
+//1. Age Timmy five years
+for (let i = 0; i < 5; i++) {
+    console.log(user1.ageUp());
 }
 
-//class Person done
+//1. At this point Timmy's a little bummed.  As a precocious child, he feels he's "seen it all" already.  Have him eat five times.
+for (let i = 0; i < 5; i++) {
+    console.log(user1.eat());
+}
 
-const timmy = new Person (Timmy);
-timmy.Age(5);
-timmy.eat(1)*5;
-timmy.exercise(1)*5//isnt he five, why is he so worried?
-timmy.setAge(9);
+//1. Now Timmy's a little heavier than he wants to be.  Kindergarten's coming up and he wants to look good.  Have him exercise five times
+for (let i = 0; i < 5; i++) {
+    console.log(user1.excercise());
+}
 
-const hamster2 = new Hamster ("Gus");
-hamster2.owner("Timmy");
+//1. Age Timmy 9 years
+for (let i = 0; i < 9; i++) {
+    console.log(user1.ageUp());
+}
 
-timmy.buyHamster(hamster2);
-timmy.age(15);
-timmy.exercise(1)*2;
-timmy.eat(1)*2;
+//1. Create a hamster named "Gus"
+const hamster1 = new hamsters('','Gus');
 
+//1. Set Gus's owner to the string "Timmy"
+hamster1.owner = user1.name;
 
+//1. Have Timmy "buy" Gus
+user1.buyHamster(hamster1.name);
 
+//1. Age Timmy 15 years
+for (let i = 0; i < 15; i++) {
+    console.log(user1.ageUp());
+}
+
+//1. Have Timmy eat twice
+for (let i = 0; i < 2; i++) {
+    console.log(user1.eat());
+    
+}
+//1. Have Timmy exercise twice
+for (let i = 0; i < 2; i++) {
+    console.log(user1.excercise());
+}
 

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="app.js"></script>
+    <title>Document</title>
+</head>
+<body style="background-image: url(cliufqx.jpg)" onload="starting()">
+    <div style="background-color: white; width: 25%; height: 50%;">
+        <p>Money: <span id="money"></span></p>
+        <p>Inventory: <span id="inventory"></span></p>
+        <button id="cutWithTeeth" onclick="cutWithTeeth()">Cut With Teeth</button>
+        <button id="cutWithScissors" onclick="cutWithScissors()">Cut With Scissors</button>
+        <button id="cutWithLawnmower" onclick="cutWithLawnmower()">Cut With Lawmower</button>
+        <p id="holder"><button id="reset" onclick="reset()">Reset</button></p>
+
+        
+    </div>
+
+    <div style="background-color: white; width: 25%; height: 50%;">
+        <p>Shop</p>
+        <button id="buyScissors" onclick="shop()">Buy Rusty Scissors</button>
+        <button id="buyLawnmower" onclick="shop()">Buy Lawnmower</button>
+        
+    </div>
+</body>
+</html>

@@ -1,3 +1,5 @@
-# homework_3
+# homework_3_Miguel
 
-### HW3 was a challenge to our ability to keep track of logic and to refine our ability to be able to maintain values in variables.
+For learning purposes only!
+
+Trying to be the best!
